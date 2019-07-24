@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ]; then
+	echo 'Use: "./build <python script> <host> <port> <symmetrick key>"'
+	exit
+fi
+if [ ! -d "build" ]; then
+	mkdir build
+fi
+cat source/aes256.py > build/$1
+cat source/easysafesocket.py >> build/$1
+cat source/server.py >> build/$1
+cat $1 >> build/$1
+echo "server(\"$2\", $3, \"$4\")" >> build/$1
+python -m py_compile build/$1
+rm build/$1

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ ! -d "build" ]; then
+	mkdir build
+fi
+cat source/aes256.py > build/easysafenetwork.py
+cat source/easysafesocket.py >> build/easysafenetwork.py
+cat source/client.py >> build/easysafenetwork.py
+python -m py_compile build/easysafenetwork.py
+rm build/easysafenetwork.py
