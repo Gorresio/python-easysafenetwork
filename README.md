@@ -1,11 +1,11 @@
 
 # Python Framework for High Level Socket with Symmetric Encryption (AES256)
 
-**easysafenetwork** is a simple library/framework for develop network applications in a simple way.
+**easysafenetwork** is a simple library/framework for develop network applications with TCP protocol in a simple way.
 
 Feature:
 - High level socket method (implementation of *sendall* and *recvall*)
-- AES256 encryption
+- AES256 encryption of payload
 - Simple customization
 
 
@@ -16,7 +16,7 @@ Feature:
 | Method | Description |
 |--------|-------------|
 |sock = connect(host, port, symmetricKey)|Initialize client connection and return EasySafeSocket object|
-|server()|Initialize server multi-threading|
+|server(host, port, symmetricKey)|Initialize server multi-threading|
 
 
 **EasySafeSocket Class**
@@ -47,7 +47,7 @@ client.py
 import sys
 from easysafenetwork import *
 
-sock = connect("127.0.0.1", 2357, "ciao")
+sock = connect("127.0.0.1", 2357, "SecretSymmetricKey")
 sock.write("Hello!")
 data = sock.read()
 if data == "":
