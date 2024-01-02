@@ -101,5 +101,5 @@ The use of easysafenetwork is at your own risk: read the license.
 
 Stefano Gorresio
 
-Emails: stefano.gorresio@null.net, stefano.gorresio@gmail.com
+Email: stefano.gorresio@gmail.com
 
